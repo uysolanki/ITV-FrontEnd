@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        font-family: Arial, sans-serif;
+        background-color: grey;
+      }
+      .list-items {
+        display: inline-block;
+        padding: 16px;
+        color: white;
+        font-size: 20px;
+      }
+      header,
+      footer {
+        background-color: #395c60;
+        color: white;
+        text-align: center;
+      }
+      #employee-registration {
+        /* text-align: center; */
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #contact-us {
+        padding: 20px;
+        margin-top: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      td,
+      th {
+        border: 1px solid red;
+        padding: 8px;
+      }
+      h3 {
+        text-align: center;
+      }
+      form input[type="submit"] {
+        background-color: green;
+        color: white;
+        border: none;
+        padding: 8px;
+        border-radius: 5px;
+        margin-left: 16px;
+      }
+      form input[type="reset"] {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 8px;
+        border-radius: 5px;
+        margin-left: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Company HR Portal</h1>
+      <nav>
+        <ul>
+          <a href="#employee-registration"
+            ><li class="list-items">Employee Registration</li></a
+          >
+          <a href="#employee-list"
+            ><li class="list-items">List of Employees</li></a
+          >
+          <a href="#contact-us"><li class="list-items">Contact Us</li></a>
+        </ul>
+      </nav>
+    </header>
+    <img src="./images/itvoffice.webp" style="height: 400px; width: 100%" />
+    <section id="employee-registration">
+      <h3>New Employees Register Here</h3>
+      <form>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" /> <br /><br />
+        <label for="email">Email</label>
+        <input type="email" id="email" /> <br /><br />
+        <label for="dob">Date Of Birth</label>
+        <input type="date" id="dob" /> <br /><br />
+        <label for="gender">Gender</label>
+        <input type="radio" id="gender" name="gender" value="male" />MALE
+        <input
+          type="radio"
+          id="gender"
+          name="gender"
+          value="female"
+        />FEMALE<br /><br />
+        <label for="mobile">Mobile Number</label>
+        <input type="tel" id="mobile" /> <br /><br />
+        <label for="dept">Department</label>
+        <select id="dept">
+          <option value="IT">IT</option>
+          <option value="SALES">SALES</option>
+          <option value="HR">HR</option></select
+        ><br /><br />
+        <input type="submit" value="REGISTER" />
+        <input type="reset" value="CLEAR FORM" />
+      </form>
+    </section>
+    <section id="employee-list">
+      <h3>List of Employees</h3>
+      <table border="1">
+        <tr>
+          <th>NAME</th>
+          <th>EMAIL</th>
+          <th>MOBILE</th>
+          <th>DEPT</th>
+        </tr>
+        <tr>
+          <td>Alice</td>
+          <td>alice@itv.com</td>
+          <td>9890123123</td>
+          <td>FSD</td>
+        </tr>
+        <tr>
+          <td>Ben</td>
+          <td>ben@itv.com</td>
+          <td>9890123145</td>
+          <td>ML</td>
+        </tr>
+        <tr>
+          <td>Chris</td>
+          <td>chris@itv.com</td>
+          <td>9890123156</td>
+          <td>DS</td>
+        </tr>
+        <tr>
+          <td>David</td>
+          <td>david@itv.com</td>
+          <td>9890123157</td>
+          <td>Python</td>
+        </tr>
+        <tr>
+          <td>Elcid</td>
+          <td>elcid@itv.com</td>
+          <td>9890123158</td>
+          <td>Html</td>
+        </tr>
+      </table>
+    </section>
+    <section id="contact-us">
+      <h3>Contact Us</h3>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.2056221558146!2d73.8410334!3d18.5196079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf3ec1207915%3A0xb73335cd0d52335c!2sItvedant%20Education%20Pvt%20Ltd%20Pune!5e0!3m2!1sen!2sin!4v1728046100973!5m2!1sen!2sin"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+      <p>Office Timings 9am : 6 pm</p>
+      <p>Contact Number : 9890111222</p>
+    </section>
+    <footer>
+      <h4>copyrights reserved &#169;2024 ITVedant</h4>
+    </footer>
+  </body>
+</html>
