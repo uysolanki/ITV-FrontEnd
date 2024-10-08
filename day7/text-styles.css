@@ -1,0 +1,125 @@
+*{
+    margin:0px;
+    margin-left: 5px;
+}
+body{
+    font-family: Roboto,Arial;
+}
+
+.roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .roboto-black {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .roboto-thin-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .roboto-light-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .roboto-regular-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .roboto-medium-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .roboto-bold-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .roboto-black-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+  
+  p{
+    margin-bottom: 25px;
+  }
+  .video-title
+  {
+    width:300px;
+    font-weight: bold;
+    line-height: 24px;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .video-stats{
+   color:  rgb(96, 96, 96);
+   font-size: 14px;
+   margin-bottom: 18px;
+  }
+
+  .video-author{
+   color:  rgb(96, 96, 96);
+   font-size: 16px;
+   margin-bottom: 18px;
+  }
+
+  .video-description{
+    width: 300px;
+    line-height: 20px;
+    color:  rgb(96, 96, 96);
+    font-size: 14px;
+    margin-bottom:50px;
+  }
+
+  .apple-shop-button{
+    height:46px;
+    background-color: rgb(227, 65, 64);
+    color:white;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 23px;
+  }
+
+  .shop-now:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
