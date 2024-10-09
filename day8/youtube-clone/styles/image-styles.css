@@ -1,0 +1,21 @@
+.thumbnail-image{
+    object-fit: cover;
+    width: 300px;
+}
+
+.video-metadata-row{
+    display: inline-block;
+}
+
+.channel-image{
+    object-fit: cover;
+    width: 50px;
+    vertical-align: top;
+    border-radius: 25px;
+}
+
+.channel-photo
+{
+    display: inline-block;
+    vertical-align: top;
+}
