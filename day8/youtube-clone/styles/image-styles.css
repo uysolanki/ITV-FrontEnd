@@ -4,18 +4,28 @@
 }
 
 .video-metadata-row{
-    display: inline-block;
+    display: grid;
+    grid-template-columns: 50px 250px;
 }
 
 .channel-image{
     object-fit: cover;
-    width: 50px;
+    /* width: 50px; */
     vertical-align: top;
     border-radius: 25px;
 }
 
-.channel-photo
-{
+
+
+.video-card{
     display: inline-block;
-    vertical-align: top;
+    margin-right: 10px;
+}
+
+
+.video-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* column-gap: 20px;
+    row-gap: 20px; */
 }
