@@ -1,0 +1,100 @@
+increase salary of employee named Alice by 100 Rs
+
+update empitv
+set salary=salary+100;
+
+
+update empitv
+set salary=salary + 0.10 *salary
+where desg = 'Developer'
+or
+desg = 'Tester'
+
+update empitv
+set salary=salary + 0.10 *salary
+where desg IN('clerk','manager');
+
+
+update empitv
+set salary=salary + 0.10 *salary
+where desg IN('clerk','manager');
+
+
+update empitv
+set salary=salary + 500
+where desg NOT IN('clerk','manager');
+
+update empitv
+set salary=salary + 500
+where gender = 'f'
+and
+workmode = 'wfo';
+
+
+update empitv
+set salary=salary + 500
+where (gender = 'f'
+and
+workmode = 'wfo')
+or desg = 'admin'
+
+
+update empitv
+set passport=null
+where empname like 'Jack';
+
+
+delete from empitv
+where desg = 'Tester';
+
+
+delete from empitv
+where passport is null;
+
+select empname
+from empitv;
+
+
+SELECT empname as 'Employee Name'
+FROM empitv
+
+SELECT concat( empname, ' ', desg ) AS 'List Of Employees'
+FROM empitv
+
+SELECT upper(empname) AS 'List Of Employees'
+FROM empitv
+
+SELECT upper(empname) AS 'List Of Employees'
+FROM empitv
+where empname like '_____e';
+
+
+SELECT upper( empname ) AS 'List Of Employees'
+FROM empitv
+WHERE empname NOT LIKE '%A'
+
+select empname as '3rd highest salary earner'
+from empitv
+order by salary desc
+limit 1 offset 2;
+
+
+SELECT distinct salary
+FROM empitv
+ORDER BY salary DESC
+LIMIT 1
+OFFSET 2 
+
+SELECT DISTINCT salary
+FROM empitv
+ORDER BY salary DESC
+LIMIT 1
+OFFSET 2
+
+
+select * from empitv
+order by desg ,salary desc,empname asc;
+
+
+
+
