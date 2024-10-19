@@ -1,0 +1,91 @@
+select min(salary)
+from empitv
+where gender = 'f';
+
+
+select min(salary)
+from empitv
+where gender = 'm'
+and
+dob > '2000-01-01';
+
+select count(empno)
+from empitv;
+
+SELECT count( * )
+FROM empitv;
+
+
+select salary  as 'Median Salary'
+from empitv
+order by salary
+limit 1 offset, (select floor(count(*)/2) from empitv);
+
+
+SELECT empname
+FROM empitv
+WHERE salary = (
+SELECT min( salary )
+FROM empitv) ;
+
+
+SELECT empname
+FROM empitv
+WHERE salary > (
+SELECT avg( salary )FROM empitv where gender = 'm') ;
+
+
+
+display names of female employees
+earning more than the salary of any male employees
+
+select empname from empitv
+where gender = 'f' 
+and 
+salary > (select max(salary) from empitv where gender = 'm');
+
+
+select empname from empitv
+where gender = 'f' 
+and 
+salary > (select max(salary) from empitv where gender = 'm');
+
+select empname from empitv
+where gender = 'f' 
+and 
+salary > ALL(select salary from empitv where gender = 'm');
+			   [1430,1210,2710,1930]
+
+select empname from empitv
+where gender = 'f' 
+and 
+salary > (select min(salary) from empitv where gender = 'm');
+
+
+select empname from empitv
+where gender = 'f' 
+and 
+salary > ANY(select salary from empitv where gender = 'm');	
+			[1430,1210,2710,1930]
+			
+			
+select empname from empitv
+where workmode IN('wfo','hybrid');
+
+
+
+
+SELECT gender, min( salary ) AS 'Minimum Salary'
+FROM empitv
+GROUP BY gender
+
+gender	Minimum Salary
+m	1210
+
+SELECT gender, min( salary ) AS 'Minimum Salary'
+FROM empitv
+GROUP BY gender
+having min( salary ) <1500;
+
+gender	Minimum Salary
+m	1210
