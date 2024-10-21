@@ -1,0 +1,39 @@
+display min salary of each desg
+
+question) display designation wise minimum salary 
+select desg, min(salary)
+from empitv
+group by desg;
+
+
+question) display designation wise minimum salary 
+order the result in desc order of the min salary
+
+SELECT desg, min( salary )
+FROM empitv
+GROUP BY desg
+order by min( salary ) desc;
+
+
+question) display designation wise top 2 minimum salary 
+
+SELECT desg, min( salary )
+FROM empitv
+GROUP BY desg
+order by min( salary ) desc
+limit 2;
+
+
+
+question )display boss wise number of reportees
+
+expected output
+BossID   Number of Reportees
+2              4
+3              2
+1              2
+
+Solution :
+SELECT boss_empno, count( * ) AS 'Number of Reportees'
+FROM empitv
+GROUP BY boss_empno;
