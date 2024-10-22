@@ -1,0 +1,108 @@
+1 to M queries
+
+average salary city wise
+
+select city,avg(salary)
+from dept d, employee e
+where e.dno = d.dno
+group by city;
+
+
+Types of Joins
+inner join  (default)
+right join  / right outer join
+left join  / left outer join
+full join
+cross join
+self join
+
+
+select *
+from dept d
+inner join 
+employee e
+on d.dno=e.dno;
+
+
+select city,count(*) as 'Number of Employees'
+from dept d
+inner join 
+employee e
+on d.dno=e.dno;
+
+
+q) city wise number of employees
+a) select city,count(*) as 'Number of Employees'
+from dept d
+inner join 
+employee e
+on d.dno=e.dno
+group by city;
+
+
+q) gender wise avg salary
+a) select gender,avg(salary) as 'Average Salary'
+from dept d
+inner join 
+employee e
+on d.dno=e.dno
+group by gender;
+
+
+q) dept wise avg salary of males
+a) select dname,avg(salary) as 'Average Salary'
+from dept d
+inner join 
+employee e
+on d.dno=e.dno
+where gender='m'
+group by dname;
+
+q) dept wise avg salary of males : use using keyword
+a) select dname,avg(salary) as 'Average Salary'
+from dept d
+inner join 
+employee e
+using(dno)
+where gender='m'
+group by dname;
+
+
+left join
+
+SELECT *
+FROM dept d
+LEFT JOIN employee e
+USING ( dno )
+
+
+q) display name of depts who do not have any emps
+SELECT dname
+FROM dept d
+LEFT JOIN employee e
+USING ( dno )
+where ename is null;
+
+
+right join
+SELECT *
+FROM dept d
+RIGHT JOIN employee e
+USING ( dno )
+
+q)display name of emps who have not been alloted a dept
+select ename
+from 
+dept d
+right join
+employee e
+using(dno)
+where dname is null;
+
+
+self join
+SELECT e1.empname, m1.empname as 'Boss Name'
+FROM empitv e1
+JOIN empitv m1
+WHERE e1.boss_empno = m1.empno
+
