@@ -41,3 +41,76 @@ insert into imdb(ano,mno,fees) values
 (2,2,20),
 (3,2,10),
 (4,3,60);
+
+
+--display movienames of SRK
+select mname
+from Actor a, Movie m, imdb i
+where a.ano=i.ano
+and
+m.mno = i.mno
+and
+aname like 'SRK';
+
+
+select *
+from Actor a, Movie m, imdb i
+where a.ano=i.ano
+and
+m.mno = i.mno;
+
+
+
+select aname,sum(fees) as 'Networth'
+from Actor a, Movie m, imdb i
+where a.ano=i.ano
+and
+m.mno = i.mno
+group by aname;
+
+
+--display the networth of each actor show richest actor on top
+SELECT aname, sum( fees ) AS 'Networth'
+FROM Actor a, Movie m, imdb i
+WHERE a.ano = i.ano
+AND m.mno = i.mno
+GROUP BY aname
+ORDER BY Networth DESC
+
+
+SELECT aname, sum( fees ) AS 'Networth'
+FROM Actor a, Movie m, imdb i
+WHERE a.ano = i.ano
+AND m.mno = i.mno
+GROUP BY aname
+ORDER BY Networth DESC
+limit 1;
+
+
+select mname, 
+case
+when revenue >=500 then 'Excellent'
+when revenue >=400 then 'V Good'
+when revenue >=300 then 'Average'
+when revenue >=200 then 'OK'
+else
+'Poor'
+end as rating
+from movie;
+
+
+
+SELECT mname,
+CASE
+WHEN revenue >=500
+THEN 'Excellent'
+WHEN revenue >=400
+THEN 'V Good'
+WHEN revenue >=300
+THEN 'Average'
+WHEN revenue >=200
+THEN 'OK'
+ELSE 'Poor'
+END AS rating
+FROM movie
+ORDER BY revenue DESC , ryear DESC;
