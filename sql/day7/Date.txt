@@ -1,0 +1,66 @@
+SELECT CURDATE() 
+output : 2024-10-28
+
+SELECT CURTIME() 
+output : 13:46:59
+
+SELECT NOW()
+output : 2024-10-28 13:46:59
+
+select date('2024-10-28 13:46:59');
+output : 2024-10-28
+
+select time('2024-10-28 13:46:59');
+output : 13:46:59
+
+SELECT date((SELECT now( )))
+
+SELECT WEEKOFYEAR( '2024-01-10' );
+
+
+SELECT MAKETIME(12,15,30);
+Ooutput : '12:15:30'
+
+
+SELECT STR_TO_DATE('01,5,2013','%d,%m,%Y');
+output : '2013-05-01'
+
+
+SELECT YEAR( dob ) AS 'Year Of Birth'
+FROM empitv
+
+SELECT MONTH( dob ) AS 'Year Of Birth'
+FROM empitv
+
+SELECT DAY( dob ) AS 'Year Of Birth'
+FROM empitv          //2 digit day i.e 11, 05, 31
+
+SELECT DAYNAME( dob ) AS 'Year Of Birth'
+FROM empitv           //full weekday name i.e Saturday,Monday
+ 
+SELECT Hour( (SELECT curtime( ) ))
+
+SELECT Minute( (SELECT curtime( ) ))
+
+SELECT Second( (SELECT curtime( ) ))
+
+
+SELECT DATE_FORMAT( '2009-10-04 22:23:00', '%W %M %Y' )
+Sunday October 2009  //%W full spelling of  the Weekday i.e Sunday 
+					 //%M Full spelling of the Month i.e October 
+                     //%Y Year in 4 digits
+
+SELECT DATE_FORMAT( '2024-10-28 22:23:00', '%w %m %y' )
+1 10 24    //%w Day of the week (0-Sun, 1-Mon.. 6-Sat) 
+           //%m month in 2 digits
+		   //%y year in 2 digits
+		   
+		   //%b is 3 chars Month i.e Jan , Feb..
+
+		   
+SELECT WEEKOFYEAR( (
+SELECT CURDATE( ) )
+)
+
+
+
