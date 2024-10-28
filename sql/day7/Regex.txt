@@ -1,0 +1,26 @@
+display the names  of employees whose  
+1)name is either Alice or Ben.
+select empname 
+from empitv 
+where empname REGEXP 'Alice|Ben'
+
+2)whose name ends with an 'e'  or 'a'
+select empname 
+from empitv 
+where empname REGEXP 'e|a$';
+
+3)whose name starts with an 'A'  or 'F'
+SELECT empname
+FROM empitv
+WHERE empname REGEXP '^A|J'
+
+4)whose name contains 'ra' or 'ar'
+SELECT empname
+FROM empitv
+WHERE empname REGEXP '[ar|ra]';
+
+5) whose name contains an 'h' followed by r or a.
+SELECT empname
+FROM empitv
+WHERE empname
+REGEXP 'h[ra]'

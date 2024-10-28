@@ -114,3 +114,34 @@ ELSE 'Poor'
 END AS rating
 FROM movie
 ORDER BY revenue DESC , ryear DESC;
+
+
+SELECT ename, 
+concat(MONTH , ' ', year ) AS 'Month', 
+basic + hra + ta + da AS 'Monthly Income'
+FROM emp
+JOIN salary
+USING ( eno )
+WHERE ename LIKE 'Alice';
+
+SELECT ename, concat(
+MONTH , ' ', year ) AS 'Month', basic + hra + ta + da AS 'Monthly Income'
+FROM emp
+JOIN salary
+USING ( eno )
+WHERE ename LIKE 'Alice'
+ORDER BY FIELD(
+MONTH , 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ) , year DESC
+
+
+SELECT ename, 
+concat(MONTH , ' ', year ) AS 'Month', 
+basic + hra + ta + da AS 'Monthly Income'
+FROM emp
+JOIN salary
+USING ( eno )
+WHERE ename LIKE 'Alice'
+order by year desc,FIELD(month,'January','February','March','April','May','June','July','August','September','October','November','December');
+
+
+
