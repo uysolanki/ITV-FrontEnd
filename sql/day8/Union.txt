@@ -1,0 +1,25 @@
+SELECT *
+FROM empitv
+WHERE desg LIKE 'Tester'			//NOTE : count of columns of both queries should be same
+UNION										 column names of the 1st query becomes the col name of the result
+SELECT *
+FROM empitv
+WHERE desg LIKE 'Developer'			
+
+
+SELECT *
+FROM empitv
+WHERE salary >=3000
+UNION								//return without the duplicates
+SELECT *
+FROM empitv
+WHERE gender LIKE 'f'
+
+
+SELECT *
+FROM empitv
+WHERE salary >=3000
+UNION ALL							//return with the duplicates
+SELECT *
+FROM empitv
+WHERE gender LIKE 'f'

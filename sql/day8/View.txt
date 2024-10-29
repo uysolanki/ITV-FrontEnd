@@ -1,0 +1,19 @@
+create view diwaligifts as
+select empname,gender,dob from empitv;
+
+
+create view diwaligifts2 as
+select empname,gender,dob 
+from empitv
+where salary<2500;
+
+
+create or replace view diwaligifts2
+as
+select empname,gender,year(dob)-year(curdate()) as Age
+from empitv;
+
+create or replace view diwaligifts2
+as
+select empname,gender,abs(year(dob)-year(curdate())) as Age
+from empitv;
