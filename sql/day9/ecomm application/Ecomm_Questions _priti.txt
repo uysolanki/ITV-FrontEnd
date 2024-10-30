@@ -1,0 +1,180 @@
+q1) Display  details of orders placed by AAKASH
+step 1:
+select * 
+from customer c
+join
+orders o
+using (cus_id);
+
+step 2:
+select * 
+from customer c
+join
+orders o
+using (cus_id)
+where cus_name like 'AAKASH';
+
+q2) total count of orders by Akash and Aman Combined
+
+step 1:
+select * 
+from customer c
+join
+orders o
+using (cus_id);
+
+step2 A:
+select * 
+from customer c
+join
+orders o
+using (cus_id)
+where cus_name like 'AAKASH' or cus_name like 'AMAN';
+
+step2 B:
+select * 
+from customer c
+join
+orders o
+using (cus_id)
+where cus_name in ('AAKASH' ,'AMAN');
+
+step 2C:
+select * 
+from customer c
+join
+orders o
+using (cus_id)
+where cus_name like 'AAKASH' 
+union
+select * 
+from customer c
+join
+orders o
+using (cus_id)
+where cus_name like 'AMAN' ;
+
+step 3:
+select count(*) as 'Count of orders' 
+from customer c
+join
+orders o
+using (cus_id)
+where cus_name in ('AAKASH' ,'AMAN');
+
+
+
+q3) q1 using joins
+
+
+
+q4) q3 using "using"  NOTE using followed by  ()
+
+
+q5) Name of supplier and total prices of products delivered by that supplier
+
+step 1: tables involved are suppliers and supplier_pricing
+		inner joining both
+select *
+from supplier s
+join
+supplier_pricing sp
+using(supp_id);
+
+
+step 2:
+select supp_name as 'Supplier name' , sum(supp_price) as 'Total supplies'
+from supplier s
+join
+supplier_pricing sp
+using(supp_id)
+group by supp_name;
+
+
+step 3: in descending order
+select supp_name as 'Supplier name' , sum(supp_price) as 'Total supplies'
+from supplier s
+join
+supplier_pricing sp
+using(supp_id)
+group by supp_name
+order by sum(supp_price) desc;
+
+step 4: top two suppliers
+select supp_name as 'Supplier name' , sum(supp_price) as 'Total supplies'
+from supplier s
+join
+supplier_pricing sp
+using(supp_id)
+group by supp_name
+order by sum(supp_price) desc
+limit 2;
+
+
+q6) q5 + have supplied products worth more than 30,000
+
+step 1:
+select supp_name as 'Supplier name' , sum(supp_price) as 'Total supplies'
+from supplier s
+join
+supplier_pricing sp
+using(supp_id)
+group by supp_name
+having sum(supp_price) > 30000
+order by sum(supp_price) desc;
+
+q7) display name and price of products supplied by 'Rajesh Retails;
+
+step 1: tables involved are supplier, supplier_pricing and product
+		inner join on all three
+select *
+from supplier s
+join
+supplier_pricing sp
+using supp_id
+join
+product p
+using pro_id;
+
+step 2:
+select p.pro_id,pro_name , pro_desc, supp_price
+from supplier s
+join
+supplier_pricing sp
+using supp_id
+join
+product p
+using pro_id
+where supp_name like 'Rajesh Retails';
+
+q8) q7 using joins
+
+q9) display name of customers who have placed more than 3 orders
+
+a)without join keyword
+
+b)with join+on keyword
+
+c)with join+using keyword
+
+q10 display name of customers who have not placed any order
+
+q11 display all the orders along with product name ordered by a customer having 
+Customer_Id=2
+
+q12 Display the Supplier details of who is supplying more than one product
+
+q13 Display customer name and gender whose names start or end with character 'A'.
+
+q14 Display the Id and Name of the Product ordered after “2021-10-05”. 
+
+q15 Display the total number of customers based on gender who have placed 
+orders of worth at least Rs 3000
+
+q16  the least expensive product from each category and print the table 
+with category id, name, and price of the product
+
+q17 Create a stored procedure to display supplier id, name, 
+rating and Type_of_supplier. If rating >4 then “Genuine Supplier” if rating >2 
+“Average Supplier” else “Supplier should not be considered
+
