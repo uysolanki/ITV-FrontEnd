@@ -1,0 +1,276 @@
+SQL> create or replace function func3
+  2  return number
+  3  is
+  4  fcount number(5);
+  5  begin
+  6  select count(*) into fcount
+  7  from employee
+  8  where gender like 'm';
+  9  return(fcount);
+ 10  end;
+ 11  /
+
+Function created.
+
+SQL> select func3 from dual;
+
+     FUNC3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+----------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+         3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+
+SQL> select * from employee;
+
+     EMPNO EMPNAME        SALARY G DOB       DESG       PASSPORT   WORKMODE   BOSS_EMPNO                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+---------- ---------- ---------- - --------- ---------- ---------- ---------- ----------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+         2 Ben              1200 m 12-AUG-76 Manager    B123456                        1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+         3 Chris            1000 m 12-SEP-96 Manager    C123456                        1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+         4 Maria            1000 f 12-MAR-01 Developer  M123456                        2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+         5 Jim              1500 m 12-APR-87 Developer  J123456                        2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+         6 Akshata           800 f 12-DEC-02 Clerk      X123456                        3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+
+SQL> create or replace procedure pro1
+  2  is
+  3  psal employee.salary%type;
+  4  pdesg employee.desg%type;
+  5  
+  6  begin
+  7  select salary,desg into psal,pdesg
+  8  from employee
+  9  where empname like 'Ben';
+ 10  dbms_output.put_line('Employee Salary' || psal);
+ 11  dbms_output.put_line('Employee Designation' || pdesg);
+ 12  end;
+ 13  /
+
+Procedure created.
+
+SQL> execute pro1;
+Employee Salary1200                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+Employee DesignationManager                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+
+PL/SQL procedure successfully completed.
+
+SQL> select * from empployee;
+select * from empployee
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> select * from employee;
+
+     EMPNO EMPNAME        SALARY G DOB       DESG       PASSPORT   WORKMODE   BOSS_EMPNO                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+---------- ---------- ---------- - --------- ---------- ---------- ---------- ----------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+         2 Ben              1200 m 12-AUG-76 Manager    B123456                        1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+         3 Chris            1000 m 12-SEP-96 Manager    C123456                        1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+         4 Maria            1000 f 12-MAR-01 Developer  M123456                        2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+         5 Jim              1500 m 12-APR-87 Developer  J123456                        2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+         6 Akshata           800 f 12-DEC-02 Clerk      X123456                        3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+
+SQL> create or replace procedure updateEmployeeSalBy10Per(peno employee.empno%type)
+  2  is
+  3  begin
+  4  update employee
+  5  set salary=salary+salary*0.10
+  6  where empno=peno;
+  7  end;
+  8  /
+
+Procedure created.
+
+SQL> execute updateEmployeeSalBy10Per(1);
+
+PL/SQL procedure successfully completed.
+
+SQL> select * from employee;
+
+     EMPNO EMPNAME        SALARY G DOB       DESG       PASSPORT   WORKMODE   BOSS_EMPNO                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+---------- ---------- ---------- - --------- ---------- ---------- ---------- ----------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+         2 Ben              1200 m 12-AUG-76 Manager    B123456                        1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+         3 Chris            1000 m 12-SEP-96 Manager    C123456                        1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+         4 Maria            1000 f 12-MAR-01 Developer  M123456                        2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+         5 Jim              1500 m 12-APR-87 Developer  J123456                        2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+         6 Akshata           800 f 12-DEC-02 Clerk      X123456                        3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+
+SQL> create or replace procedure updateEmployeeSalBy10Per(peno employee.empno%type)
+  2  is
+  3  begin
+  4  update employee
+  5  set salary=salary+salary*0.10
+  6  where empno=peno;
+  7  exception
+  8  when NO_DATA_FOUND then
+  9  RAISE_APPLICATION_ERROR('-20321','Employee dose not exist');
+ 10  end;
+ 11  /
+
+Procedure created.
+
+SQL> execute updateEmployeeSalBy10Per(1);
+
+PL/SQL procedure successfully completed.
+
+SQL> 
+SQL> 
+SQL> create or replace procedure updateEmployeeSalBy10Percent(peno employee.empno%type)
+    is
+    begin
+    update employee
+    set salary=salary+salary*0.10
+    where empno=peno;
+   exception
+    when NO_DATA_FOUND then
+    RAISE_APPLICATION_ERROR('-20321','Employee dose not exist');
+   end;
+   /
+
+Procedure created.
+
+SQL> execute updateEmployeeSalBy10Percent(1);
+
+PL/SQL procedure successfully completed.
+
+SQL> create or replace procedure updateEmployeeSalBy10Percent(peno employee.empno%type)
+    is
+    begin
+    select empname
+    from employee
+    where empno=peno;
+    exception
+    when NO_DATA_FOUND then
+    RAISE_APPLICATION_ERROR('-20321','Employee dose not exist');
+   end;
+   /
+
+Warning: Procedure created with compilation errors.
+
+SQL> show errors;
+Errors for PROCEDURE UPDATEEMPLOYEESALBY10PERCENT:
+
+LINE/COL ERROR                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+-------- -----------------------------------------------------------------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+4/1      PLS-00428: an INTO clause is expected in this SELECT statement                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+SQL> create or replace procedure testpro(peno employee.empno%type)
+  2  is
+  3  test employee.salary%type;
+  4  begin
+  5  select salary into test
+  6  from employee
+  7  where empno=peno;
+  8  exception
+  9  when NO_DATA_FOUND then
+ 10  RAISE_APPLICATION_ERROR('-20321','Employee dose not exist');
+ 11  end;
+ 12  /
+
+Procedure created.
+
+SQL> execute testpro(1);
+BEGIN testpro(1); END;
+
+*
+ERROR at line 1:
+ORA-20321: Employee dose not exist 
+ORA-06512: at "YOGESHWAR.TESTPRO", line 10 
+ORA-06512: at line 1 
+
+
+
+SQL*Plus: Release 11.2.0.2.0 Beta on Thu Nov 7 18:40:38 2024
+
+Copyright (c) 1982, 2010, Oracle.  All rights reserved.
+
+SQL> conn yogeshwar/itv007;
+Connected.
+SQL> select * from employee;
+
+     EMPNO EMPNAME        SALARY G DOB       DESG       PASSPORT   WORKMODE
+---------- ---------- ---------- - --------- ---------- ---------- ----------
+BOSS_EMPNO
+----------
+         2 Ben              1200 m 12-AUG-76 Manager    B123456
+         1
+
+         3 Chris            1000 m 12-SEP-96 Manager    C123456
+         1
+
+         4 Maria            1000 f 12-MAR-01 Developer  M123456
+         2
+
+
+     EMPNO EMPNAME        SALARY G DOB       DESG       PASSPORT   WORKMODE
+---------- ---------- ---------- - --------- ---------- ---------- ----------
+BOSS_EMPNO
+----------
+         5 Jim              1500 m 12-APR-87 Developer  J123456
+         2
+
+         6 Akshata           800 f 12-DEC-02 Clerk      X123456
+         3
+
+
+SQL> set lines 1000 pages 1000;
+SQL> select * from employee;
+
+     EMPNO EMPNAME        SALARY G DOB       DESG       PASSPORT   WORKMODE   BOSS_EMPNO
+---------- ---------- ---------- - --------- ---------- ---------- ---------- ----------
+         2 Ben              1200 m 12-AUG-76 Manager    B123456                        1
+         3 Chris            1000 m 12-SEP-96 Manager    C123456                        1
+         4 Maria            1000 f 12-MAR-01 Developer  M123456                        2
+         5 Jim              1500 m 12-APR-87 Developer  J123456                        2
+         6 Akshata           800 f 12-DEC-02 Clerk      X123456                        3
+
+SQL> execute updateEmployeeSalBy10Percent(2);
+BEGIN updateEmployeeSalBy10Percent(2); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7:
+PLS-00905: object YOGESHWAR.UPDATEEMPLOYEESALBY10PERCENT is invalid
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+
+SQL> create or replace procedure updateEmployeeSalBy10Percent(peno employee.empno%type)
+  2      is
+  3      begin
+  4      update employee
+  5      set salary=salary+salary*0.10
+  6      where empno=peno;
+  7     exception
+  8      when NO_DATA_FOUND then
+  9      RAISE_APPLICATION_ERROR('-20321','Employee dose not exist');
+ 10     end;
+ 11     /
+
+Procedure created.
+
+SQL> execute updateEmployeeSalBy10Percent(2);
+
+PL/SQL procedure successfully completed.
+
+SQL> select * from employee;
+
+     EMPNO EMPNAME        SALARY G DOB       DESG       PASSPORT   WORKMODE   BOSS_EMPNO
+---------- ---------- ---------- - --------- ---------- ---------- ---------- ----------
+         2 Ben              1320 m 12-AUG-76 Manager    B123456                        1
+         3 Chris            1000 m 12-SEP-96 Manager    C123456                        1
+         4 Maria            1000 f 12-MAR-01 Developer  M123456                        2
+         5 Jim              1500 m 12-APR-87 Developer  J123456                        2
+         6 Akshata           800 f 12-DEC-02 Clerk      X123456                        3
+
+SQL> execute updateEmployeeSalBy10Percent(3);
+
+PL/SQL procedure successfully completed.
+
+SQL> select * from employee;
+
+     EMPNO EMPNAME        SALARY G DOB       DESG       PASSPORT   WORKMODE   BOSS_EMPNO
+---------- ---------- ---------- - --------- ---------- ---------- ---------- ----------
+         2 Ben              1320 m 12-AUG-76 Manager    B123456                        1
+         3 Chris            1100 m 12-SEP-96 Manager    C123456                        1
+         4 Maria            1000 f 12-MAR-01 Developer  M123456                        2
+         5 Jim              1500 m 12-APR-87 Developer  J123456                        2
+         6 Akshata           800 f 12-DEC-02 Clerk      X123456                        3
+
+SQL>
