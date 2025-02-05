@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="showCollege()">Want to See My College Name?</button>
+    <button onkeypress="showCity(event)">Want to See My City Name?</button>
+    <div id="one" class="red">
+        College Name loading....
+    </div>
+
+    <script>
+        function showCollege()
+        {
+                let divElement1=document.querySelector("#one")
+                divElement1.innerHTML="Fergusson College"
+        }
+
+        function showCity(event)
+        {
+                if(event.key==='Enter')
+                {
+                let divElement1=document.querySelector("#one")
+                divElement1.innerHTML="Pune"
+                }
+        }
+    </script>
+</body>
+</html>

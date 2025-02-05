@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+     
+    let student={
+      rno:18,
+      sname:'Virat',
+      mp:100,
+      rs:10000,
+      'mp-n':9999
+    }
+    student.momname='Saroj'
+    student['spouse-name']="Anushka"
+    console.log(student.sname)
+    let n=50;
+    console.log('Matches Played ',student['mp-n'])
+
+    for(let key in student)
+    {
+      console.log(`My key is ${key} and value is ${student[key]}`)
+    }
+      
+    </script>
+  </body>
+</html>

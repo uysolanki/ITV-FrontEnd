@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+        // player1={
+        //     jno:18,
+        //     pname:"Virat",
+        //     mp:100,
+        //     rs:10000,
+        //     'father-name':"Premnath",
+        //     father:100
+        // }
+
+        // let name=50
+        // console.log(player1['father-name'])
+
+       // console.log('My Favourite Player is ',player1.pname, 'He has played', player1.mp, ' matches')
+        // console.log(`My Favourite Player is ${player1.pname} He has played ${player1.mp} matches`)
+        // console.log(player1)
+        // player1.momname='Saroj'
+        // console.log(player1)
+
+        // delete player1.jno
+        // console.log(player1)
+
+        // console.log(`My Favourite Player is ${player1['pname']} He has played ${player1['mp']} matches`)
+
+        // rs=100
+        // player1={
+        //     jno:18,
+        //     pname:"Virat",
+        //     mp:100,
+        //     rs:10000,
+        //     'father-name':"Premnath",
+        //     fun1: function calculateAvg()
+        //           {
+        //             this.avg=this.rs/this.mp;
+        //             console.log(this.avg)
+        //           }
+        // }
+
+        // player1.fun1()
+        // console.log(player1)
+
+
+
+        // rs=100
+        // player1={
+        //     jno:18,
+        //     pname:"Alice",
+        //     mp:100,
+        //     rs:10000,
+        //     'father-name':"Premnath",
+        //     fun1: function()
+        //           {
+        //             this.avg=this.rs/this.mp;
+        //             console.log(this.avg)
+        //           }
+        // }
+
+        // player1.fun1()
+        // console.log(player1)
+
+
+        // rs=100
+        // player1={
+        //     jno:18,
+        //     pname:"Alice",
+        //     mp:100,
+        //     rs:10000,
+        //     'father-name':"Premnath",
+        //     fun1: ()=>
+        //           {
+        //             this.avg=this.rs/this.mp;
+        //             console.log(this.avg)
+        //           }
+        // }
+
+        // player1.fun1()
+        // console.log(player1)
+
+
+        // rs=100
+        // player1={
+        //     jno:18,
+        //     pname:"Alice",
+        //     mp:100,
+        //     rs:10000,
+        //     'father-name':"Premnath",
+        //     fun1: function()
+        //           {
+        //             this.avg=this.rs/this.mp;
+        //             console.log(this.avg)
+        //           },
+        //     fun2: function()
+        //           {
+        //             this.avg=this.rs/this.mp;
+        //             console.log(this.avg*2)
+        //           },
+
+        // }
+
+        // player1.fun2()
+        // console.log(player1)
+
+
+        player1={
+            jno:18,
+            pname:"Virat",
+            mp:100,
+            rs:10000,
+            centuries:{
+                odi:50,
+                t20i:1,
+                test:27
+            },
+            fun1: function()
+                  {
+                    this.avg=this.rs/this.mp;
+                    console.log(this.avg)
+                  }
+        }
+
+        // console.log(`Test Centuries : ${player1.centuries.test}`)
+        // console.log(typeof player1)
+        // console.log(typeof player1.jno)
+        // console.log(typeof player1.pname)
+        // console.log(typeof player1.fun1)
+        // console.log(typeof player1.centuries)
+
+        for(let key in player1)
+        {
+            console.log(`${key} : ${player1[key]}`)
+
+        }
+
+
+    </script>
+</body>
+</html>

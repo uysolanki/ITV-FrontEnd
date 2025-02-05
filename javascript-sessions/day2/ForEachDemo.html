@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+    
+      cars=["Audi","BMW","Merc"];
+      console.log(typeof cars)
+
+      cars.forEach(
+        (car)=>{
+          console.log('I drive ',car)
+          if(car==="Audi")
+        {
+          return
+        }
+
+        console.log("Hi How are you", car)
+        }
+      );
+    </script>
+  </body>
+</html>

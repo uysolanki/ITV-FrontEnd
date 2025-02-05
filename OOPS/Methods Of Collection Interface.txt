@@ -1,0 +1,12 @@
+methods of Collection interface
+
+1. public boolean add(Object o);
+2. public boolean add(int index,Object o);
+3. public boolean remove(Object o);
+4. public boolean removeAll(Collection c);
+5. public boolean retainAll(Collection c);
+6. public boolean remove(int index);
+7. public int size();
+8. public boolean isEmpty();
+9. public boolean clear();
+10. public boolean addAll(Collection c);

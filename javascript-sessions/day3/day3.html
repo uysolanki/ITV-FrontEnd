@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="one" class="itv">A</h1>
+    <h1 id="two" class="itv">B</h1>
+    <h1 id="three" class="itv">C</h1>
+
+    <script>
+        // let headingElement1=document.getElementById("one");
+        // headingElement1.innerHTML="ITVedant"
+        // headingElement1.classList.add("red")
+
+        // let headingElement2=document.getElementById("two");
+        // headingElement2.innerHTML="FC Road"
+
+        // let headingElement3=document.getElementById("three");
+        // headingElement3.innerHTML="Pune"
+
+    //let allHeadingElements=document.getElementsByClassName("itv")
+       
+    //     for(let i=0;i<allHeadingElements.length;i++)
+    // {
+    //     allHeadingElements[i].innerHTML="Apple"
+    // }
+
+    // for(let h of allHeadingElements)
+    // {
+    //     h.innerHTML="Mango"
+    // }
+
+     let allHeadingElements=document.getElementsByClassName("itv")
+    // console.log(typeof allHeadingElements)
+
+    Array.from(allHeadingElements).forEach(
+        (h)=> h.innerHTML="Berry Nice"
+    );
+
+    cars=["Audi","BMW","Merc"]
+    cars.forEach(
+        (car)=> console.log('I Like' ,car) 
+    )
+
+    </script>
+</body>
+</html>
