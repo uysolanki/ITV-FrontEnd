@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
+  <body onkeypress="handleKeyPress(event)">
     <button
       onclick="
         let divCounterElement=document.querySelector('#counter')
@@ -30,7 +30,7 @@
     >
       Decrement By 1
     </button>
-    <div id="counter">0</div>
+    <div id="counter">0</div> <div id="activity"></div>
     <script>
         function incrementBy2()
         {
@@ -44,6 +44,31 @@
             let divCounterElement=document.querySelector('#counter')
             if(parseInt(divCounterElement.innerHTML)>0)
             divCounterElement.innerHTML=parseInt(divCounterElement.innerHTML)-2   
+        }
+
+        function handleKeyPress(event)
+        {
+            let divCounterElement=document.querySelector('#counter')
+
+            let counterValue=parseInt(divCounterElement.innerHTML)
+
+            let divActivityElement=document.querySelector('#activity');
+            switch(event.key)
+            {
+            case 'a': counterValue+=1;
+                      divActivityElement.innerHTML="Increment By 1"
+                      break;
+            case 'b': counterValue+=2;
+                      divActivityElement.innerHTML="Increment By 2"
+                      break;
+                     
+            case 'c': counterValue-=2;
+                      divActivityElement.innerHTML="Decrement By 2"
+                      break;
+            case 'd': counterValue-=1;
+                      divActivityElement.innerHTML="Decrement By 1"
+            }
+            divCounterElement.innerHTML=counterValue
         }
     </script>
   </body>

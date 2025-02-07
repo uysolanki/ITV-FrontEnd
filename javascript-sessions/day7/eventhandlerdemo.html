@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="js-increment-btn">Increment By 1</button>
+    <div id="js-counter">0</div>
+
+
+    <script>
+        let incrementButtonElement=document.querySelector('#js-increment-btn')
+        let counterDivElement=document.querySelector('#js-counter')
+
+       incrementButtonElement.addEventListener('click',()=> {handleincrement(10)})
+
+
+    //    incrementButtonElement.addEventListener('click',()=>{
+    //     let counterValue=parseInt(counterDivElement.innerHTML);
+    //         counterValue+=3
+    //         counterDivElement.innerHTML=counterValue
+    //    })
+
+        function handleincrement(incrementValue)
+        {
+            let counterValue=parseInt(counterDivElement.innerHTML);
+            counterValue+=incrementValue
+            counterDivElement.innerHTML=counterValue
+        }
+    </script>
+</body>
+</html>
