@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button
+      onclick="
+        let divCounterElement=document.querySelector('#counter')
+        if(parseInt(divCounterElement.innerHTML)<10)
+        divCounterElement.innerHTML=parseInt(divCounterElement.innerHTML)+1
+        "
+    >
+      Increment By 1
+    </button>
+
+    <button  onclick="incrementBy2()">  Increment By 2  </button>
+
+    <button  onclick="decrementBy2()">  Decrement By 2  </button>
+    
+
+    <button
+      onclick="
+        let divCounterElement2=document.querySelector('#counter')
+        if(parseInt(divCounterElement2.innerHTML)>0)
+        divCounterElement2.innerHTML=parseInt(divCounterElement2.innerHTML)-1
+        "
+    >
+      Decrement By 1
+    </button>
+    <div id="counter">0</div>
+    <script>
+        function incrementBy2()
+        {
+            let divCounterElement=document.querySelector('#counter')
+            if(parseInt(divCounterElement.innerHTML)<10)
+            divCounterElement.innerHTML=parseInt(divCounterElement.innerHTML)+2   
+        }
+
+        function decrementBy2()
+        {
+            let divCounterElement=document.querySelector('#counter')
+            if(parseInt(divCounterElement.innerHTML)>0)
+            divCounterElement.innerHTML=parseInt(divCounterElement.innerHTML)-2   
+        }
+    </script>
+  </body>
+</html>

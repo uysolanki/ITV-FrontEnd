@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .red{
+            background-color: red;
+            color: yellow;
+        }
+        .green{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <button id="subscribe-btn" class="red" onclick="toggleSubscribeButton('ITVedant')">subscribe</button>
+
+    <button id="subscribe-btn" class="red" onclick="
+    
+    setInterval(()=>{
+        
+    },2000)
+    
+    ">Start Counter</button>
+
+    <button id="like-btn2" class="red" onclick="
+    let likeButtonElement=document.getElementById('like-btn2');
+    likeButtonElement.innerHTML==='like'?likeButtonElement.innerHTML='dislike':likeButtonElement.innerHTML='like'
+    ">like</button>
+    <script>
+        function toggleSubscribeButton(companyName)
+        {
+            let subscribeButtonElement=document.getElementById("subscribe-btn")
+            if(subscribeButtonElement.innerHTML==="subscribe") //tru
+            {
+            subscribeButtonElement.innerHTML=companyName
+            subscribeButtonElement.classList.add("green")
+            }
+            else
+            {
+            subscribeButtonElement.innerHTML="subscribe"
+            subscribeButtonElement.classList.remove("green")
+            subscribeButtonElement.classList.add("red")
+            }
+        }
+
+
+        function apple(companyname)
+        {
+            console.log("HI", companyname)
+        }
+    </script>
+</body>
+</html>
