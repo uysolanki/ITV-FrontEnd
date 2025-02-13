@@ -1,20 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './SubscribeButton.css'
 const SubscribeButton = () => {
-    let cars=["Audi","BMW","Merc","Honda","Tesla"];
+    let [subscribe,setSubscribe]=useState(false)
+
+    function handleClick()
+    {
+        setSubscribe(!subscribe)
+    }
  
     return (
     <div>
-        <button>Subscribe</button>
-        <ul>
-           {
-            cars.map(
-                (car,index)=>{
-                 return <li key={index}>{car} </li>
-                }
-            )
-           }
-        </ul>
+        <button onClick={handleClick} style={{backgroundColor:subscribe?'red':'green'}}>Subscribe</button>
+        <button onClick={handleClick} className={subscribe?'subscribe-button':''}>Subscribe</button>
     </div>
   )
 }

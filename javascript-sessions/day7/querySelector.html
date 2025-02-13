@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Welcome to</h2>
+        <p>ItVedant</p>
+    </div>
+        
+    <div>
+        <h1>Full Stack Course</h1>
+        <p>JavaScript</p>
+    </div>
+    
+    <div class="container">
+        <h2>Title 1</h2>
+        <div class="nested">
+            <p>Paragraph 1 inside nested div</p>
+            <p>Paragraph 2 inside nested div</p>
+        </div>
+        <p>Paragraph 3 inside container</p>
+    </div>
+
+    <div class="container">
+        <p>Direct child 1</p>
+        <div class="nested">
+            <p>Nested paragraph 1</p>
+        </div>
+        <p>Direct child 2</p>
+    </div>
+
+    <input type="text" id="name" placeholder="Enter your name">
+    <input type="password" id="password" placeholder="Enter your password">
+    <input type="text" id="search" placeholder="Search">
+    <script>
+
+    const textInputs = document.querySelectorAll('input[type="text"]');
+
+// Loop through and log the id of each text input
+    textInputs.forEach(input => {
+    console.log(input.id);
+    });
+
+// Select only direct child <p> elements of the .container element
+    const directChildren = document.querySelectorAll('.container > p');
+
+// Change the text color of the direct children to red
+directChildren.forEach((para) => {
+    para.style.color = 'red';
+});
+        const paragraphs = document.querySelectorAll('.container p');
+
+// Loop over each selected <p> element and change its text color to red
+paragraphs.forEach((para) => {
+    para.style.color = 'red';
+});
+    const divElements=document.querySelectorAll("div")
+    divElements.forEach((divElement,index)=>{
+    divElement.style.backgroundColor="yellow"
+        if(index===0)
+        {
+            const h2Element=divElement.querySelector("h2")
+            h2Element.innerText="Apple"
+        }
+    })
+
+    let arr=[10,20,30]
+    arr.forEach((element,index,arr)=>arr[index]=element*2)
+
+    console.log(arr)
+    console.log("hi")
+
+    const title = document.querySelector('.title');  // Selects the first element with class 'title'
+    title.style.color = "red"; 
+    </script>
+    
+</body>
+</html>
