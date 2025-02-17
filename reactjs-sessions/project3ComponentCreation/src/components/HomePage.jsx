@@ -23,10 +23,10 @@ const HomePage = () => {
   return (
     <>
      
-      <Button text='IncrementBy1'  onclickhandle={handleIncrementby1}/>
-      <Button text='IncrementBy2'  onclickhandle={handleIncrementby2}/>
-      <Button text='DecrementBy1'  onclickhandle={handleDecrementby1}/>
-      <Button text='DeccrementBy2' onclickhandle={handleDecrementby2}/>
+      <Button text='IncrementBy1'  onclickhandle={handleIncrementby1} mycolor='red'/>
+      <Button text='IncrementBy2'  onclickhandle={handleIncrementby2} mycolor='green'/>
+      <Button text='DecrementBy1'  onclickhandle={handleDecrementby1} mycolor='blue'/>
+      <Button text='DeccrementBy2' onclickhandle={handleDecrementby2} mycolor='yellow'/>
       <span>{counter}</span>
     </>
   );

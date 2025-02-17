@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Button = ({text,onclickhandle}) => {
+const Button = (props) => {
   return (
    <>
-    <button onClick={onclickhandle}>{text}</button>
+    <button onClick={props.onclickhandle} style={{backgroundColor:props.mycolor}}>{props.text} </button>
     <br/>
    </>
   )
