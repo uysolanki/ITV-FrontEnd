@@ -2,16 +2,19 @@ import React from 'react'
 import MyHeading from './components/MyHeading'
 import SubscribeButton from './components/SubscribeButton'
 import Button from './components/Button'
+import List from './components/List'
+import NewList from './components/NewList'
+import NewListPro from './components/NewListPro'
 
 const App = () => {
   function fun1()
   {
-      alert('Sign In')
+      alert('Sign Up')
   }
 
   function fun2()
   {
-      alert('Sign Up')
+      alert('Sign In')
   }
 
   function fun3()
@@ -29,10 +32,11 @@ const App = () => {
     <div>
       {/* <MyHeading />
       <SubscribeButton /> */}
-      <Button text="Sign Up" onclickhandler={fun1}/>
+      {/* <Button text="Sign Up" onclickhandler={fun1}/>
       <Button text="Sign In" onclickhandler={fun2}/>
       <Button text="Register" onclickhandler={fun3}/>
-      <Button text="Subscibe" onclickhandler={fun4}/>
+      <Button text="Subscibe" onclickhandler={fun4}/> */}
+      <SubscribeButton/>
     </div>
   )
 }

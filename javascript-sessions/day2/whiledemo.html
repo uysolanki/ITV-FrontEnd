@@ -7,14 +7,60 @@
   </head>
   <body>
     <script>
-      let i = 1;
-      let sum=0;
-      while (i <= 5) //entry controlled  meaning condition first loop body later
-      {
-       sum+=i;
-        i++;
-      }
-      console.log(sum)
-    </script>
+      // let i = 1;
+      // let sum=0;
+      // while (i <= 5) //entry controlled  meaning condition first loop body later
+      // {
+      //  sum+=i;
+      //   i++;
+      // }
+      // console.log(sum)
+
+
+//       add(10,20,display)
+
+//       function add(a,b,callback)
+//       {
+//         let sum=a+b
+//         callback(sum)
+//       }
+
+//       function display(ans) {
+//   if (ans === undefined) {
+//     console.log('No value was passed');
+//   } else {
+//     console.log('Value passed: ', ans);
+//   }
+// }
+
+// function display(ans = 'default value') {
+//   if (ans === 'default value') {
+//     console.log('No value was passed');
+//   } else {
+//     console.log('Value passed: ', ans);
+//   }
+// }
+
+// function display() {
+//   if (arguments.length === 0) {
+//     console.log('No value was passed');
+//   } else {
+//     console.log('Value passed: ', arguments[0]);
+//   }
+// }
+
+// display();  // Logs: No value was passed
+// display(42);
+
+function display(ans=99) {
+  console.log(arguments.length)
+  console.log(arguments[0])
+}
+
+display();      // == will Log: No value was passed    === will Log: No value was passed
+display(null);  // == will Log: No value was passed    === Value passed: null
+display(42,45);
+   
+   </script>
   </body>
 </html>

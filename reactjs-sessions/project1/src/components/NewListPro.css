@@ -1,0 +1,44 @@
+body {
+    color: white;
+    background-color: black;
+    text-align: center;
+  }
+  
+  /* Game Area */
+  .game-area {
+    display: inline-block;
+    border: 1px solid red;
+    text-align: center;
+    padding: 10px;
+    margin-top: 100px;
+    background-color: rgb(49, 43, 43);
+  }
+   
+  .small-move-icon {
+    height: 30px;
+  }
+  
+  /* Autoplay Button */
+  .autoplay-button {
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 2px;
+    padding: 10px;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .autoplay-button.green {
+    background-color: green;
+  }
+  
+  /* Score and Result Text */
+  .player-move,
+  .game-result,
+  .scoreboard {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
