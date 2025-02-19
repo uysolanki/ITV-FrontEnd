@@ -1,8 +1,8 @@
 import React from 'react'
 import './Button.css'
+import PropTypes from 'prop-types';
 
 const Button = ({text,onclickhandle,mycolor,icon,bgcolor}) => {
-    console.log(text)
   return (
    <>
     <button onClick={onclickhandle} className={bgcolor?mycolor:'blue'}
@@ -14,10 +14,10 @@ const Button = ({text,onclickhandle,mycolor,icon,bgcolor}) => {
     <br/>
    </>
   )
-}
+};
 
 Button.defaultProps = {
-    text: "Apple"       // Default text
+    text: 'Apple',  // Default value for text when not passed
 };
     
 Button.propTypes = {
