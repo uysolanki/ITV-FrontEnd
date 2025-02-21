@@ -1,0 +1,21 @@
+.unordered-list{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: lightgray;
+    color: black;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height: 55px;
+}
+
+.listItem{
+    padding: 17px;
+   
+}
+.listItem:hover{
+    background-color: lightpink;
+    cursor: pointer;
+    border: 1px solid black;
+}
