@@ -1,0 +1,22 @@
+ol{
+    display: flex;
+    list-style: none;
+    justify-content:space-between;
+    width:500px;
+    background-color: lightblue;
+}
+
+.parent-container{
+    display: flex;
+    height: 50px;
+}
+
+.left-section
+{
+    margin-left: 20px;
+}
+
+.right-section
+{
+    margin-left: 700px;
+}
