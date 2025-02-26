@@ -2,11 +2,14 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Products from './pages/Products';
 import Navbar from './components/Navbar';
-import Product from './pages/Product';
+import Product from './pages/ProductCard';
 import SaveProduct from './pages/SaveProduct';
 import Cart from './pages/Cart';
 import Login from './pages/Login';
-import HeroPage from './pages/HeroPage';
+import { Footer } from './components/Footer';
+import SingleProduct from './pages/SingleProduct';
+import Hero from './pages/Hero';
+import Register from './pages/Register';
 
 const App = () => {
   return (
@@ -15,7 +18,7 @@ const App = () => {
       <Navbar />
         <Routes>
 
-          <Route path="/" element={<HeroPage />} />
+          <Route path="/" element={<Hero />} />
 
           <Route path="/products" element={<Products />} />
 
@@ -25,11 +28,15 @@ const App = () => {
 
           <Route path="/addproduct" element={<SaveProduct />} />
 
-          <Route path='/product/:productId' element={<Product/> } />
+          <Route path="/register" element={<Register />} />
+
+          <Route path='/singleproduct/:productId' element={<SingleProduct/> } />
         </Routes>
+        <Footer />
       </Router>
   </>
   )
 }
 
 export default App
+
